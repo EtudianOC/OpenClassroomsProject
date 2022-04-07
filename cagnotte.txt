@@ -1,0 +1,64 @@
+-----------------------------
+-- CREATION DES TABLES ODS --
+-----------------------------
+
+SET check_function_bodies = false;
+
+
+------------------------
+-- Table 'ods_notice' --
+------------------------
+
+DROP TABLE IF EXISTS docad.ods_notice;
+
+CREATE TABLE docad.ods_notice
+(
+  id_notice			integer		NOT NULL,
+  numero_notice			integer		NOT NULL,
+  type_document			text		NOT NULL,
+  numero_imprime		text,
+  id_producteur			integer		NOT NULL,
+  id_redacteur			integer,
+  id_publicateur		integer,
+  id_dernier_intervenant	integer,
+  date_creation			integer		NOT NULL,
+  date_modification		integer		NOT NULL,
+  date_publication		date,
+  date_retrait_publication	date,
+  date_diffusion		date,
+  workflow_notice		text		NOT NULL,
+  en_ligne			text		NOT NULL,
+  dua				date		NOT NULL,
+  visibilite_generale		text		NOT NULL,
+  confidentialite		text		NOT NULL,
+  restriction_profil_metier	text		NOT NULL,
+  restriction_profil_grade	text		NOT NULL,
+  restriction_structure		text		NOT NULL,
+  id_pdc			text		NOT NULL,
+  communicabilite		text		NOT NULL,
+  id_open_data			integer,
+  reference			text,
+  titre				text		NOT NULL,
+  auteur			text		NOT NULL,
+  nature			text		NOT NULL,
+  cerfa				text,
+  nor				text,
+  annexe_externe		text,
+  resume			text		NOT NULL,
+  mot_cle			text		NOT NULL,
+  date_signature		date,
+  millesime			text,
+  document_principal		integer,
+  document_annexe		text,
+  nom_fichier			text,
+  autre_format			text,
+  url				text,
+  emplacement_local		text,
+  id_atlas			integer
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE ts_com;
+ALTER TABLE docad.ods_notice OWNER to com;
+
